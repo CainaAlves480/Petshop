@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços | Pet Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="servicos">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">PS</div><div><strong>Pet Shop</strong><small>GERENCIAMENTO</small></div></div>
+      <nav class="nav">
+        <div class="nav-section">Visão geral</div>
+        <a href="index.html" data-page="dashboard"><span class="nav-dot"></span>Dashboard</a>
+        <div class="nav-section">Cadastros</div>
+        <a href="clientes.html" data-page="clientes"><span class="nav-dot"></span>Clientes</a>
+        <a href="animais.html" data-page="animais"><span class="nav-dot"></span>Animais</a>
+        <a href="produtos.html" data-page="produtos"><span class="nav-dot"></span>Produtos</a>
+        <a href="servicos.html" data-page="servicos"><span class="nav-dot"></span>Serviços</a>
+        <div class="nav-section">Operações</div>
+        <a href="agendamentos.html" data-page="agendamentos"><span class="nav-dot"></span>Agendamentos</a>
+        <a href="vendas.html" data-page="vendas"><span class="nav-dot"></span>Vendas</a>
+      </nav>
+      <div class="sidebar-footer">Sistema interno &middot; v1.0</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
+        <div><h1>Serviços</h1><p>Serviços oferecidos e seus valores</p></div>
+      </header>
+
+      <section class="content">
+        <div class="page-heading">
+          <div><h2>Lista de serviços</h2><p>Banho, tosa, consultas e outros cuidados</p></div>
+          <button class="btn btn-primary" id="btnNovo">+ Novo serviço</button>
+        </div>
+
+        <div class="toolbar">
+          <div class="search-box"><input type="search" id="busca" placeholder="Buscar serviço..."></div>
+          <span class="muted" id="contador"></span>
+        </div>
+
+        <div class="card">
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Serviço</th><th>Descrição</th><th class="right">Preço</th><th class="right">Duração</th><th class="right">Ações</th></tr></thead>
+              <tbody id="tbody"><tr><td colspan="5" class="muted">Carregando...</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/servicos.js"></script>
+</body>
+</html>

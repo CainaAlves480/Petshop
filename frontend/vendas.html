@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendas | Pet Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="vendas">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">PS</div><div><strong>Pet Shop</strong><small>GERENCIAMENTO</small></div></div>
+      <nav class="nav">
+        <div class="nav-section">Visão geral</div>
+        <a href="index.html" data-page="dashboard"><span class="nav-dot"></span>Dashboard</a>
+        <div class="nav-section">Cadastros</div>
+        <a href="clientes.html" data-page="clientes"><span class="nav-dot"></span>Clientes</a>
+        <a href="animais.html" data-page="animais"><span class="nav-dot"></span>Animais</a>
+        <a href="produtos.html" data-page="produtos"><span class="nav-dot"></span>Produtos</a>
+        <a href="servicos.html" data-page="servicos"><span class="nav-dot"></span>Serviços</a>
+        <div class="nav-section">Operações</div>
+        <a href="agendamentos.html" data-page="agendamentos"><span class="nav-dot"></span>Agendamentos</a>
+        <a href="vendas.html" data-page="vendas"><span class="nav-dot"></span>Vendas</a>
+      </nav>
+      <div class="sidebar-footer">Sistema interno &middot; v1.0</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
+        <div><h1>Vendas</h1><p>Registro de vendas e finalização com baixa de estoque</p></div>
+      </header>
+
+      <section class="content">
+        <div class="page-heading">
+          <div><h2>Vendas realizadas</h2><p>A finalização executa a procedure <strong>finalizar_venda</strong> no PostgreSQL</p></div>
+          <button class="btn btn-primary" id="btnNovaVenda">+ Nova venda</button>
+        </div>
+
+        <div class="grid-2" style="grid-template-columns: minmax(360px, 1fr) minmax(400px, 1.15fr);">
+          <div class="card">
+            <div class="card-header">
+              <div><h3>Histórico de vendas</h3><p id="contador">Carregando...</p></div>
+            </div>
+            <div class="toolbar" style="padding: 14px 16px 0; margin-bottom: 0;">
+              <div class="search-box"><input type="search" id="busca" placeholder="Buscar por cliente ou número..."></div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>#</th><th>Data</th><th>Cliente</th><th class="right">Total</th><th>Status</th></tr></thead>
+                <tbody id="tbody"><tr><td colspan="5" class="muted">Carregando...</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card" id="cardDetalhe">
+            <div class="card-header">
+              <div><h3>Detalhes da venda</h3><p id="detalheSubtitulo">Selecione uma venda na lista</p></div>
+              <div class="topbar-actions" id="detalheAcoes"></div>
+            </div>
+            <div class="card-body" id="detalheCorpo">
+              <div class="empty-state"><strong>Nenhuma venda selecionada</strong>Clique em uma venda para ver os itens e as ações disponíveis.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/vendas.js"></script>
+</body>
+</html>

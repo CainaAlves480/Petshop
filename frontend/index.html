@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Pet Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">PS</div>
+        <div><strong>Pet Shop</strong><small>GERENCIAMENTO</small></div>
+      </div>
+      <nav class="nav">
+        <div class="nav-section">Visão geral</div>
+        <a href="index.html" data-page="dashboard"><span class="nav-dot"></span>Dashboard</a>
+        <div class="nav-section">Cadastros</div>
+        <a href="clientes.html" data-page="clientes"><span class="nav-dot"></span>Clientes</a>
+        <a href="animais.html" data-page="animais"><span class="nav-dot"></span>Animais</a>
+        <a href="produtos.html" data-page="produtos"><span class="nav-dot"></span>Produtos</a>
+        <a href="servicos.html" data-page="servicos"><span class="nav-dot"></span>Serviços</a>
+        <div class="nav-section">Operações</div>
+        <a href="agendamentos.html" data-page="agendamentos"><span class="nav-dot"></span>Agendamentos</a>
+        <a href="vendas.html" data-page="vendas"><span class="nav-dot"></span>Vendas</a>
+      </nav>
+      <div class="sidebar-footer">Sistema interno &middot; v1.0</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
+        <div><h1>Dashboard</h1><p>Resumo das operações da loja</p></div>
+        <div class="topbar-actions"><span class="muted" id="hoje"></span></div>
+      </header>
+
+      <section class="content">
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-icon">C</div><div class="stat-info"><span>Clientes cadastrados</span><strong id="statClientes">-</strong></div></div>
+          <div class="stat-card"><div class="stat-icon orange">A</div><div class="stat-info"><span>Animais cadastrados</span><strong id="statAnimais">-</strong></div></div>
+          <div class="stat-card"><div class="stat-icon blue">P</div><div class="stat-info"><span>Produtos disponíveis</span><strong id="statProdutos">-</strong></div></div>
+          <div class="stat-card"><div class="stat-icon">S</div><div class="stat-info"><span>Serviços realizados</span><strong id="statServicos">-</strong></div></div>
+          <div class="stat-card"><div class="stat-icon orange">V</div><div class="stat-info"><span>Vendas finalizadas</span><strong id="statVendas">-</strong></div></div>
+          <div class="stat-card"><div class="stat-icon gray">R$</div><div class="stat-info"><span>Faturamento total</span><strong id="statFaturamento">-</strong></div></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-header">
+              <div><h3>Produtos com estoque baixo</h3><p>Quantidade atual menor ou igual ao mínimo</p></div>
+              <a class="btn btn-sm btn-ghost" href="produtos.html">Ver produtos</a>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Produto</th><th class="right">Estoque</th><th class="right">Mínimo</th></tr></thead>
+                <tbody id="tbodyEstoqueBaixo"><tr><td colspan="3" class="muted">Carregando...</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div><h3>Próximos agendamentos</h3><p>Serviços confirmados</p></div>
+              <a class="btn btn-sm btn-ghost" href="agendamentos.html">Ver agenda</a>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Data</th><th>Animal / Cliente</th><th>Serviço</th><th class="right">Hora</th></tr></thead>
+                <tbody id="tbodyAgendamentos"><tr><td colspan="4" class="muted">Carregando...</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mt-16">
+          <div class="card-header"><div><h3>Acesso rápido</h3><p>Atalhos para as rotinas mais usadas</p></div></div>
+          <div class="card-body">
+            <div class="quick-links">
+              <a class="btn btn-primary" href="vendas.html">Registrar venda</a>
+              <a class="btn btn-ghost" href="agendamentos.html">Novo agendamento</a>
+              <a class="btn btn-ghost" href="clientes.html">Cadastrar cliente</a>
+              <a class="btn btn-ghost" href="animais.html">Cadastrar animal</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
